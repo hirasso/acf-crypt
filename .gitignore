@@ -1,0 +1,11 @@
+# System
+.DS_Store
+
+# NPM
+node_modules
+
+# Composer
+vendor
+
+# php-cs-fixer
+.php-cs-fixer.cache
