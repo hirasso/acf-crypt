@@ -1,6 +1,6 @@
 {
-  "name": "hirasso/acf-encrypt",
-  "description": "Encrypt ACF fields to safely store sensitive data",
+  "name": "hirasso/acf-encryption",
+  "description": "Protect sensitive data in your ACF fields using encryption 🔐",
   "type": "wordpress-muplugin",
   "license": "GPL-2.0-or-later",
   "authors": [
