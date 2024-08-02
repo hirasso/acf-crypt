@@ -11,7 +11,7 @@
  * GitHub Plugin URI: hirasso/acf-encrypt
  */
 
-use Hirasso\ACFEncryption\ACFEncryption;
+use Hirasso\ACFCrypt\ACFCrypt;
 
 /** Exit if accessed directly */
 if (!defined('ABSPATH')) {
@@ -21,4 +21,4 @@ if (!defined('ABSPATH')) {
 define('ACF_ENCRYPTION_PLUGIN_URI', untrailingslashit(plugin_dir_url(__FILE__)));
 define('ACF_ENCRYPTION_PLUGIN_DIR', untrailingslashit(__DIR__));
 
-ACFEncryption::init();
+ACFCrypt::init();

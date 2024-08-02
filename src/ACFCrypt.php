@@ -1,13 +1,13 @@
 <?php
 
-namespace Hirasso\ACFEncryption;
+namespace Hirasso\ACFCrypt;
 
 /**
  * The main plugin class. Adds hooks and handles encryption/decryption
  */
-class ACFEncryption
+class ACFCrypt
 {
-    private static string $option_name = '_acfcrypt_is_encrypted';
+    private static string $option_name = '_acfcrypt_encrypted';
     private static string $algorithm = 'AES-256-CBC';
     private static string $passphrase;
 
@@ -28,11 +28,11 @@ class ACFEncryption
      */
     public static function init()
     {
-        if (!defined('ACF_CRYPTO_KEY') || empty(trim(ACF_CRYPTO_KEY))) {
+        if (!defined('ACF_CRYPT_KEY') || empty(trim(ACF_CRYPT_KEY))) {
             return;
         }
 
-        self::$passphrase = hash('sha256', ACF_CRYPTO_KEY);
+        self::$passphrase = hash('sha256', ACF_CRYPT_KEY);
 
         add_action('acf/render_field_settings', [self::class, 'render_field_settings']);
         add_filter('acf/update_value', [self::class, 'update_value'], 1, 3);
@@ -71,8 +71,8 @@ class ACFEncryption
         }
 
         acf_render_field_setting($field, array(
-            'label'  => __('Encrypt field value'),
-            'instructions' => 'Activate this if the field should store sensitive information',
+            'label'  => __('Encrypt this field'),
+            'instructions' => 'Encrypt this fields\'s value in the database',
             'name' => self::$option_name,
             'type' => 'true_false',
             'ui' => 1,

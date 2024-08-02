@@ -1,5 +1,5 @@
 {
-  "name": "hirasso/acf-encryption",
+  "name": "hirasso/acf-crypt",
   "description": "Protect sensitive data in your ACF fields using encryption 🔐",
   "type": "wordpress-muplugin",
   "license": "GPL-2.0-or-later",
@@ -12,7 +12,7 @@
   "minimum-stability": "stable",
   "autoload": {
     "psr-4": {
-      "Hirasso\\ACFEncrypt\\": "src/"
+      "Hirasso\\ACFCrypt\\": "src/"
     }
   },
   "require": {
