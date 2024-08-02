@@ -2,10 +2,10 @@
 /**
  * @license MIT
  *
- * Modified by Rasso Hilber on 01-August-2024 using {@see https://github.com/BrianHenryIE/strauss}.
+ * Modified by Rasso Hilber on 02-August-2024 using {@see https://github.com/BrianHenryIE/strauss}.
  */
 
-namespace Hirasso\ACFEncrypt\Defuse\Crypto;
+namespace Hirasso\ACFCrypt\Defuse\Crypto;
 
 /**
  * Class DerivedKeys

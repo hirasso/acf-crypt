@@ -2,12 +2,12 @@
 /**
  * @license MIT
  *
- * Modified by Rasso Hilber on 01-August-2024 using {@see https://github.com/BrianHenryIE/strauss}.
+ * Modified by Rasso Hilber on 02-August-2024 using {@see https://github.com/BrianHenryIE/strauss}.
  */
 
-namespace Hirasso\ACFEncrypt\Defuse\Crypto;
+namespace Hirasso\ACFCrypt\Defuse\Crypto;
 
-use Hirasso\ACFEncrypt\Defuse\Crypto\Exception as Ex;
+use Hirasso\ACFCrypt\Defuse\Crypto\Exception as Ex;
 
 final class Encoding
 {
