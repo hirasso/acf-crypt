@@ -12,6 +12,7 @@
  */
 
 use Hirasso\ACFCrypt\ACFCrypt;
+use Hirasso\ACFCrypt\AdminUI;
 
 /** Exit if accessed directly */
 if (!defined('ABSPATH')) {
@@ -27,3 +28,4 @@ define('ACF_CRYPT_PLUGIN_URI', untrailingslashit(plugin_dir_url(__FILE__)));
 define('ACF_CRYPT_PLUGIN_DIR', untrailingslashit(__DIR__));
 
 ACFCrypt::init();
+AdminUI::init();

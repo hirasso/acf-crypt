@@ -56,7 +56,6 @@ final class ACFCrypt
         add_action('acf/render_field_settings', [self::class, 'render_field_settings']);
         add_filter('acf/update_value', [self::class, 'update_value'], 11, 3);
         add_filter('acf/load_value', [self::class, 'load_value'], 11, 3);
-        add_filter('acf/prepare_field', [self::class, 'prepare_field']);
     }
 
     /**
@@ -82,7 +81,7 @@ final class ACFCrypt
     /**
      * Check if a field is set to be encrypted
      */
-    private static function is_encrypted_field(array $field): bool
+    public static function is_encrypted_field(array $field): bool
     {
         return !empty($field[static::$option_name]);
     }
@@ -103,20 +102,6 @@ final class ACFCrypt
             'type' => 'true_false',
             'ui' => 1,
         ]);
-    }
-
-    /**
-     * Prepare a field if it's encrypted. Render a shield after the field label
-     */
-    public static function prepare_field(?array $field): ?array
-    {
-        if (empty($field)) {
-            return null;
-        }
-        if (!empty($field[static::$option_name])) {
-            $field['label'] .= '<span class="dashicons dashicons-shield" style="font-size: 0.9em; width: 1em; height: 1.2em; display: inline-block; margin-left: 0.2em; vertical-align: middle;" title="encrypted"></span>';
-        }
-        return $field;
     }
 
     /**
@@ -164,4 +149,6 @@ final class ACFCrypt
 
         return $value;
     }
+
+
 }
