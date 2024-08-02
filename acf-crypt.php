@@ -18,6 +18,11 @@ if (!defined('ABSPATH')) {
     exit;
 }
 
+require_once __DIR__ . '/strauss/autoload.php';
+if (is_readable(__DIR__ . '/vendor')) {
+    require_once __DIR__ . '/vendor/autoload.php';
+}
+
 define('ACF_ENCRYPTION_PLUGIN_URI', untrailingslashit(plugin_dir_url(__FILE__)));
 define('ACF_ENCRYPTION_PLUGIN_DIR', untrailingslashit(__DIR__));
 
