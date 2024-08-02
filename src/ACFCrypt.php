@@ -29,18 +29,19 @@ final class ACFCrypt
     ];
 
     /**
-     * Init. Return early if the global 'RHAU_ACF_ENCRYPTION_KEY' is not set
+     * Init. Return early if the global 'RHAU_ACF_CRYPT_KEY' is not defined
      */
     public static function init()
     {
         add_action('admin_notices', [self::class, 'print_key_suggestion_notice']);
 
+        /** Key defined? */
         if (!defined('ACF_CRYPT_KEY')) {
             static::$admin_notice_type = 'info';
             static::$admin_notice_message = "<strong>ACF_CRYPT_KEY missing<strong>. Here's an example:";
             return;
         }
-
+        /** Key invalid? */
         if (empty(ACF_CRYPT_KEY) || strlen(ACF_CRYPT_KEY) < 30) {
             static::$admin_notice_type = 'warning';
             static::$admin_notice_message = "<strong>Invalid ACF_CRYPT_KEY detected</strong>. Here's a valid example:";
@@ -102,19 +103,20 @@ final class ACFCrypt
             return;
         }
 
-        acf_render_field_setting($field, array(
+        acf_render_field_setting($field, [
             'label'  => __('Encrypt this field'),
             'instructions' => 'Encrypt this fields\'s value in the database',
             'name' => self::$option_name,
             'type' => 'true_false',
             'ui' => 1,
-        ));
+        ]);
     }
 
     /**
      * Prepare a field if it's encrypted. Render a shield after the field label
      */
-    public static function prepare_field(?array $field): ?array {
+    public static function prepare_field(?array $field): ?array
+    {
         if (empty($field)) {
             return null;
         }
@@ -150,7 +152,7 @@ final class ACFCrypt
         if (self::is_encrypted($value, $field)) {
             try {
                 return Crypto::decrypt($value, static::$key);
-            } catch(WrongKeyOrModifiedCiphertextException $exception) {
+            } catch (WrongKeyOrModifiedCiphertextException $exception) {
                 // the field value was previously not yet encrypted
             }
         }

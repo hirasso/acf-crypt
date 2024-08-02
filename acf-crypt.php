@@ -23,7 +23,7 @@ if (is_readable(__DIR__ . '/vendor')) {
     require_once __DIR__ . '/vendor/autoload.php';
 }
 
-define('ACF_ENCRYPTION_PLUGIN_URI', untrailingslashit(plugin_dir_url(__FILE__)));
-define('ACF_ENCRYPTION_PLUGIN_DIR', untrailingslashit(__DIR__));
+define('ACF_CRYPT_PLUGIN_URI', untrailingslashit(plugin_dir_url(__FILE__)));
+define('ACF_CRYPT_PLUGIN_DIR', untrailingslashit(__DIR__));
 
 ACFCrypt::init();
