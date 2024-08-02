@@ -135,7 +135,7 @@ final class ACFCrypt
         array $field
     ): mixed {
         if (self::is_encrypted($value, $field)) {
-            // @TODO why does this need `stripslashes`?
+            // Reverse wp_magic_quotes using stripslashes before encryption
             return Crypto::encrypt(stripslashes($value), static::$key);
         }
         return $value;
