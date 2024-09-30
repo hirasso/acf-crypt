@@ -1,8 +1,8 @@
-(function ($, acf) {
+(function ($) {
   $(() => {
-    if (acf === undefined) {
+    if (window.acf === undefined) {
       return;
     }
     // We could implement some logic here sometime in the future
   });
-})(jQuery, acf);
+})(jQuery);

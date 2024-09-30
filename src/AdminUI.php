@@ -19,8 +19,8 @@ final readonly class AdminUI
      */
     public static function enqueue_assets(): void
     {
-        wp_enqueue_style('acf-crypt-css', self::asset_uri('/assets-src/acf-crypt.css'), [], null);
-        wp_enqueue_script('acf-crypt-js', self::asset_uri('/assets-src/acf-crypt.js'), ['jquery'], null, true);
+        wp_enqueue_style('acf-crypt-css', self::asset_uri('/assets/acf-crypt.css'), [], null);
+        wp_enqueue_script('acf-crypt-js', self::asset_uri('/assets/acf-crypt.js'), ['jquery'], null, true);
     }
 
     /**
