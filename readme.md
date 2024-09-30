@@ -1,6 +1,6 @@
 # acf-crypt
 
-WIP – Protect sensitive data in your ACF fields using encryption 🔐
+Protect sensitive data in your ACF fields using state of the art [encryption](https://github.com/defuse/php-encryption) 🔐
 
 ## Installation
 
@@ -43,3 +43,7 @@ Activate the option "Encrypt this field" for any text field in your field group 
 The field's value will now be encrypted in your database:
 
 ![CleanShot 2024-09-30 at 13 11 19@2x](https://github.com/user-attachments/assets/64f81057-826f-4fab-8647-614f9c3e8a27)
+
+## Disclaimer
+
+This plugin is provided "as-is" without any express or implied warranty. While efforts have been made to ensure the functionality of this plugin, I take no responsibility for any damage, data loss, or issues that arise from its use. By using this plugin, you acknowledge that you do so at your own risk, and you are solely responsible for any consequences that result from its use, including any legal or regulatory compliance. It is recommended that you backup your database and test the plugin in a safe environment before applying it to a live site.
