@@ -132,13 +132,9 @@ final class ACFCrypt
         if (!self::is_non_empty_string($value)) {
             return $value;
         }
-        if (!self::is_encrypted_field($field)) {
-            return $value;
-        }
         if (!str_starts_with($value, static::$encryption_prefix)) {
             return $value;
         }
-
         $unprefixed = substr($value, strlen(static::$encryption_prefix));
 
         try {
