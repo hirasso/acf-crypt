@@ -126,7 +126,7 @@ final class ACFCrypt
      */
     public static function load_value(
         mixed $value,
-        string|int $post_id,
+        string|int|null $post_id,
         array $field
     ): mixed {
         if (!self::is_non_empty_string($value)) {
