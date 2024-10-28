@@ -1,9 +1,9 @@
 <?php
 
 /**
- * Plugin Name: acf-encrypted
- * Description: Encrypt selected fields, to protect sensitive data in your database
- * Version: 1.0.3
+ * Plugin Name: ACF Crypt
+ * Description: Encrypt selected ACF fields to protect sensitive data in your database
+ * Version: 1.0.4
  * Requires PHP: 8.2
  * Author: Rasso Hilber
  * Author URI: https://rassohilber.com
